@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 9dcbca2e6382efe43a96655040d2c48e
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _MatcapTextureFallbackThisIsARediculousNameSoThatItDoesntGetReplaced: {fileID: 2800000,
+      guid: b467e35127a30eb4c9b3c45061455bd1, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
