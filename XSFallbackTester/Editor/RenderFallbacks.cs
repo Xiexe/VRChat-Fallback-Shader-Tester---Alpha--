@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 //reset on new transform
@@ -110,35 +111,17 @@ public class RenderFallbacks : EditorWindow
     private void DetermineFallbacks(int i, int j, Renderer r)
     {
         string currShaderName = currentShader[i][j].name;
-        Color trustRankColor = new Color(0, 0, 0, 0);
 
-        switch (trustColor)
+        var rankToColors = new Dictionary<TrustRankColors, Color>()
         {
-            case TrustRankColors.visitor:
-                trustRankColor = new Color(0.8f, 0.8f, 0.8f, 1);
-                break;
-
-            case TrustRankColors.newUser:
-                trustRankColor = new Color(0.09020f, 0.47059f, 1f, 1);
-                break;
-
-            case TrustRankColors.user:
-                trustRankColor = new Color(0.16863f, .81176f, 0.36078f, 1);
-                break;
-
-            case TrustRankColors.knownUser:
-                trustRankColor = new Color(1f, 0.48235f, 0.25882f, 1);
-                break;
-
-            case TrustRankColors.trusted:
-                trustRankColor = new Color(0.50588f, 0.26275f, 0.90196f, 1);
-                break;
-
-            case TrustRankColors.friend:
-                trustRankColor = new Color(1f, 1f, 0f, 1);
-                break;
-            
-        }
+            {TrustRankColors.visitor, new Color(0.8f, 0.8f, 0.8f, 1)},
+            {TrustRankColors.newUser, new Color(0.09020f, 0.47059f, 1f, 1)},
+            {TrustRankColors.user, new Color(0.16863f, .81176f, 0.36078f, 1)},
+            {TrustRankColors.knownUser, new Color(1f, 0.48235f, 0.25882f, 1)},
+            {TrustRankColors.trusted, new Color(0.50588f, 0.26275f, 0.90196f, 1)},
+            {TrustRankColors.friend,  new Color(1f, 1f, 0f, 1)}
+        };
+        var trustRankColor = rankToColors[trustColor];
 
         if (r.sharedMaterials[j].HasProperty("_MainTex"))
         {
