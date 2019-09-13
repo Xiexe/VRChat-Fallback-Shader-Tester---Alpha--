@@ -19,7 +19,7 @@ public class RenderFallbacks : EditorWindow
 
     public Transform Avatar;
 
-    private enum TrustRankColors {visitor, newUser, user, knownUser, trusted, friend};
+    private enum TrustRankColors {Visitor, NewUser, User, KnownUser, Trusted, Friend};
     private TrustRankColors trustColor;
 
     private static Renderer[] allRenderers;
@@ -114,12 +114,12 @@ public class RenderFallbacks : EditorWindow
 
         var rankToColors = new Dictionary<TrustRankColors, Color>()
         {
-            {TrustRankColors.visitor, new Color(0.8f, 0.8f, 0.8f, 1)},
-            {TrustRankColors.newUser, new Color(0.09020f, 0.47059f, 1f, 1)},
-            {TrustRankColors.user, new Color(0.16863f, .81176f, 0.36078f, 1)},
-            {TrustRankColors.knownUser, new Color(1f, 0.48235f, 0.25882f, 1)},
-            {TrustRankColors.trusted, new Color(0.50588f, 0.26275f, 0.90196f, 1)},
-            {TrustRankColors.friend,  new Color(1f, 1f, 0f, 1)}
+            {TrustRankColors.Visitor, new Color(0.8f, 0.8f, 0.8f, 1)},
+            {TrustRankColors.NewUser, new Color(0.09020f, 0.47059f, 1f, 1)},
+            {TrustRankColors.User, new Color(0.16863f, .81176f, 0.36078f, 1)},
+            {TrustRankColors.KnownUser, new Color(1f, 0.48235f, 0.25882f, 1)},
+            {TrustRankColors.Trusted, new Color(0.50588f, 0.26275f, 0.90196f, 1)},
+            {TrustRankColors.Friend,  new Color(1f, 1f, 0f, 1)}
         };
         var trustRankColor = rankToColors[trustColor];
 
