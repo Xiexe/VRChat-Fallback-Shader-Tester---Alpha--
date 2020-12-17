@@ -144,7 +144,7 @@ public class RenderFallbacks : EditorWindow
         }
         else
         {
-            r.sharedMaterials[j].shader = Shader.Find("Fallback/Fallback_Matcap");
+            r.sharedMaterials[j].shader = Shader.Find("Fallback/Matcap");
             r.sharedMaterials[j].SetColor("_MatcapColorTintHolyMolyDontReadThis", trustRankColor);
         }
         currentShader[i][j] = r.sharedMaterials[j].shader;
