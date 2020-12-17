@@ -1,7 +1,7 @@
-﻿Shader "Fallback/Fallback_Matcap"
+﻿Shader "Fallback/Matcap"
 {
 	Properties
-	{	
+	{
 		[HideInInspector]_MatcapTextureFallbackThisIsARediculousNameSoThatItDoesntGetReplaced("Matcap Texture", 2D) = "white" {}
 		[HideInInspector]_MatcapColorTintHolyMolyDontReadThis("Color", Color) = (0,0,0,1)
 	}
@@ -15,7 +15,7 @@
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			
+
 			#include "AutoLight.cginc"
 			#include "Lighting.cginc"
 			#include "UnityCG.cginc"
@@ -66,7 +66,7 @@
 
 				return o;
 			}
-			
+
 			fixed4 frag (v2f i) : SV_Target
 			{
 				i.normal = normalize(i.normal);
