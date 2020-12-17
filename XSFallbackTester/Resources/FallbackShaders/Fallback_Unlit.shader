@@ -1,4 +1,4 @@
-﻿Shader "Fallback/Fallback_Unlit"
+﻿Shader "Fallback/Unlit"
 {
 	Properties
 	{
@@ -16,7 +16,7 @@
 			#pragma fragment frag
 			// make fog work
 			#pragma multi_compile_fog
-			
+
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -34,7 +34,7 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
-			
+
 			v2f vert (appdata v)
 			{
 				v2f o;
@@ -43,7 +43,7 @@
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}
-			
+
 			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture
